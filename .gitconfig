@@ -1,0 +1,13 @@
+[user]
+	email = lennart.alff@gmail.com
+	name = Thies Lennart Alff
+[merge]
+	tool = kdiff3
+[diff]
+	guitool = kompare
+[init]
+	defaultBranch = main
+[core]
+	editor = vim
+[pull]
+	ff = only

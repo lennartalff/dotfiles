@@ -107,3 +107,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias reboot-windows="systemctl reboot --boot-loader-entry=windows.conf"
 alias reboot-linux="systemctl reboot --boot-loader-entry=arch.conf"
+alias zshrc="vim ~/.zshrc"
+
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+export PATH="$PATH:$GEM_HOME/bin"

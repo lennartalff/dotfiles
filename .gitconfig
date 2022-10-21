@@ -2,7 +2,7 @@
 	email = lennart.alff@gmail.com
 	name = Thies Lennart Alff
 [merge]
-	tool = kdiff3
+	tool = vimdiff
 [diff]
 	guitool = kompare
 [init]

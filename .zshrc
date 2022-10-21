@@ -89,6 +89,5 @@ fi
 
 alias reboot-windows="systemctl reboot --boot-loader-entry=windows.conf"
 alias reboot-linux="systemctl reboot --boot-loader-entry=arch.conf"
-<<<<<<< Updated upstream
 alias zshrc="vim ~/.zshrc"
 

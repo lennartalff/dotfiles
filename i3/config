@@ -13,7 +13,7 @@ for_window [class="krunner"] floating enable; border none
 for_window [class="Kmix"] floating enable; border none
 for_window [class="Klipper"] floating enable; border none
 for_window [class="Plasmoidviewer"] floating enable; border none
-for_window [class="(?i)*nextcloud*"] floating disable
+# for_window [class="(?i)*nextcloud*"] floating disable
 for_window [class="plasmashell" window_type="notification"] border none, move position 70 ppt 81 ppt
 no_focus [class="plasmashell" window_type="notification"]
 
@@ -21,10 +21,11 @@ exec_always --no-startup-id picom -cb
 
 font pango:Noto Sans 14
 
-bindsym $mod+t exec qterminal
 set $mod Mod4
 
-bindsym $mod+Return exec konsole
+bindsym $mod+Ctrl+Shift+l exec "i3lock -i $HOME/Wallpaper/lockscreen.png"
+
+bindsym $mod+Return exec "konsole --hide-menubar"
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run
 bindsym $mod+Shift+c reload

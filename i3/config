@@ -18,6 +18,7 @@ for_window [class="plasmashell" window_type="notification"] border none, move po
 no_focus [class="plasmashell" window_type="notification"]
 
 exec_always --no-startup-id picom -cb
+focus_follows_mouse no
 
 font pango:Noto Sans 14
 

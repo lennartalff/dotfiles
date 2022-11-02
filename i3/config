@@ -120,10 +120,12 @@ bindsym $mod+Shift+l move right
 bindsym $mod+f fullscreen toggle
 
 exec --no-startup-id nm-applet
+exec --no-startup-id "nitrogen --restore"
 exec --no-startup-id dex --autostart --environment i3
 # high dpi scaling
 exec "xrandr --dpi 144"
 
 bar {
 	status_command i3status
+	position top
 }

@@ -90,11 +90,10 @@ bindsym $mod+x [urgent=latest] focus
 
 # autostart
 set $messenger_workspace "10"
-exec --no-startup-id i3-msg 'exec telegram-desktop; exec slack'
-exec --no-startup-id i3-msg 'exec firefox '
+exec --no-startup-id slack
+exec --no-startup-id telegram-desktop
+exec --no-startup-id firefox
 assign [class="^TelegramDesktop$"] $messenger_workspace
 assign [class="^Slack$"] $messenger_workspace
 assign [class="^firefox$"] "1"
-exec --no-startup-id sleep 5 && i3-msg workspace "$messenger_workspace"
-exec --no-startup-id layout tabbed
-exec --no-startup-id i3-msg 'workspace 1; exec keepassxc'
+exec --no-startup-id keepassxc

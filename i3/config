@@ -30,7 +30,7 @@ exec "xrandr --dpi 144"
 exec --no-startup-id "nitrogen --restore"
 
 # dex could be used for autostarting applications. not used right now
-# exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id dex --autostart --environment i3
 
 # autostart hotkey daemon
 exec_always --no-startup-id sxhkd -c $HOME/.config/sxhkd/sxhkdrc
@@ -46,7 +46,6 @@ bindsym $mod+Ctrl+Shift+l exec --no-startup-id $locker
 
 bindsym $mod+Return exec "konsole --hide-menubar"
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec dmenu_run
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 set $mode_exit exit: [l]ock, l[o]gout, [r]eboot, [s]hutdown
@@ -90,10 +89,6 @@ bindsym $mod+x [urgent=latest] focus
 
 # autostart
 set $messenger_workspace "10"
-exec --no-startup-id slack
-exec --no-startup-id telegram-desktop
-exec --no-startup-id firefox
 assign [class="^TelegramDesktop$"] $messenger_workspace
 assign [class="^Slack$"] $messenger_workspace
 assign [class="^firefox$"] "1"
-exec --no-startup-id keepassxc

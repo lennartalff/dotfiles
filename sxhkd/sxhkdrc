@@ -9,3 +9,6 @@ super + {_, shift +, ctrl +} {h, j, k, l}
 # resize mode
 super + r: {h, j, k, l}
     i3-msg resize {shrink width, grow height, shrink height, grow width} 10 px or 10 ppt
+
+super + {_, shift +} d
+    i3-msg "exec --no-startup-id {i3-dmenu-desktop, dmenu_run}"

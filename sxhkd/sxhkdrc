@@ -12,3 +12,6 @@ super + r: {h, j, k, l}
 
 super + {_, shift +} d
     i3-msg "exec --no-startup-id {i3-dmenu-desktop, dmenu_run}"
+
+super + {_, shift +} n
+    dunstctl {history-pop, close}

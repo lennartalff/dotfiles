@@ -6,3 +6,4 @@ i3status
 dunst
 sxhkd
 dex
+ranger

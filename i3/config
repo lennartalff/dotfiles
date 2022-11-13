@@ -45,6 +45,7 @@ set $locker i3lock -i $HOME/Wallpaper/lockscreen.png && sleep 1
 bindsym $mod+Ctrl+Shift+l exec --no-startup-id $locker
 
 bindsym $mod+Return exec "konsole --hide-menubar"
+bindsym $mod+Shift+Return exec --no-startup-id "konsole -e ranger"
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart

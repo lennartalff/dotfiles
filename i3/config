@@ -23,6 +23,8 @@ exec_always --no-startup-id picom -cb
 exec_always --no-startup-id dunst
 # fix scaling
 exec "xrandr --dpi 144"
+# ibus for easy unicode input support
+exec_always --no-startup-id "ibus-daemon -drx --panel /usr/lib/ibus/ibus-ui-gtk3"
 
 # exec --no-startup-id nm-applet
 
@@ -41,7 +43,7 @@ font pango:Noto Sans 14
 
 set $mod Mod4
 
-set $locker i3lock -i $HOME/Wallpaper/lockscreen.png && sleep 1
+set $locker /usr/bin/i3lock-fancy
 bindsym $mod+Ctrl+Shift+l exec --no-startup-id $locker
 
 bindsym $mod+Return exec "konsole --hide-menubar"

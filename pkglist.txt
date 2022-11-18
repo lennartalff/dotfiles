@@ -7,3 +7,4 @@ dunst
 sxhkd
 dex
 ranger
+network-manager-applet

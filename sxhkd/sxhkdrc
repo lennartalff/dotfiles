@@ -15,3 +15,5 @@ super + {_, shift +} d
 
 super + {_, shift +} n
     dunstctl {history-pop, close}
+super + shift + space
+    i3-msg floating toggle

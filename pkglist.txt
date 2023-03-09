@@ -2,6 +2,7 @@ picom
 nitrogen
 i3-gaps
 i3lock
+xautolock
 i3status
 dunst
 sxhkd

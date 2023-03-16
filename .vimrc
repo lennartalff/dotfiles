@@ -19,6 +19,8 @@ augroup WrapLine
 	autocmd FileType txt setlocal wrap
 	autocmd FileType rst setlocal wrap
 augroup End
+" highlight current line
+set cursorline
 " enable line numbers
 set number relativenumber
 set nu rnu

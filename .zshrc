@@ -91,4 +91,4 @@ alias reboot-windows="systemctl reboot --boot-loader-entry=windows.conf"
 alias reboot-linux="systemctl reboot --boot-loader-entry=arch.conf"
 alias zshrc="vim ~/.zshrc"
 
-kinit -kt "$HOME/keytabs/cta1233.keytab" cta1233@KERBEROS.TU-HARBURG.DE
+# kinit -kt "$HOME/keytabs/cta1233.keytab" cta1233@KERBEROS.TU-HARBURG.DE

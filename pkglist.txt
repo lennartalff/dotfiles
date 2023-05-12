@@ -9,3 +9,5 @@ sxhkd
 dex
 ranger
 network-manager-applet
+xautolock
+polkit-kde-agent

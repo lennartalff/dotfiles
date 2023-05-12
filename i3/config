@@ -51,6 +51,9 @@ set $locker /usr/bin/i3lock-fancy
 bindsym $mod+Ctrl+Shift+l exec --no-startup-id $locker
 exec --no-startup-id xautolock -time 10 -locker /usr/bin/i3lock-fancy -notify 10 -notifier "notify-send -u critical -t 10000 -- 'Screen locking in 10s'"
 
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +5%
+
 bindsym $mod+Return exec "konsole --hide-menubar"
 bindsym $mod+Shift+Return exec --no-startup-id "konsole -e ranger"
 bindsym $mod+Shift+q kill

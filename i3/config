@@ -51,8 +51,12 @@ set $locker /usr/bin/i3lock-fancy
 bindsym $mod+Ctrl+Shift+l exec --no-startup-id $locker
 exec --no-startup-id xautolock -time 10 -locker /usr/bin/i3lock-fancy -notify 10 -notifier "notify-send -u critical -t 10000 -- 'Screen locking in 10s'"
 
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%-
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 10%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +10%
+
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
 bindsym $mod+Return exec "konsole --hide-menubar"
 bindsym $mod+Shift+Return exec --no-startup-id "konsole -e ranger"

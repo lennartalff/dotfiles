@@ -30,7 +30,7 @@ exec "xrandr --dpi 96"
 exec_always --no-startup-id "ibus-daemon -drx --panel /usr/lib/ibus/ibus-ui-gtk3"
 exec --no-startup-id nm-applet
 
-exec --no-startip-id /usr/lib/polkit-kde-authentication-agent-1 &
+exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1 &
 
 # nitrogen handles the desktop background
 exec --no-startup-id "nitrogen --restore"

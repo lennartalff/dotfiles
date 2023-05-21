@@ -16,6 +16,10 @@ for_window [class="Plasmoidviewer"] floating enable; border none
 # for_window [class="(?i)*nextcloud*"] floating disable
 for_window [class="plasmashell" window_type="notification"] border none, move position 70 ppt 81 ppt no_focus [class="plasmashell" window_type="notification"]
 
+# no title bars
+default_border pixel 1
+default_floating_border pixel 1
+
 gaps inner 10
 gaps outer 5
 
@@ -40,6 +44,8 @@ exec --no-startup-id dex --autostart --environment i3
 
 # autostart hotkey daemon
 exec_always --no-startup-id sxhkd -c $HOME/.config/sxhkd/sxhkdrc
+
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 focus_follows_mouse no
 
@@ -92,12 +98,6 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 client.background       #ffffff
 
-# high dpi scaling
-
-bar {
-	status_command i3status
-	position top
-}
 # go to urgent workspace
 bindsym $mod+x [urgent=latest] focus
 

@@ -2,6 +2,7 @@ picom
 nitrogen
 i3-gaps
 i3lock
+polybar
 xautolock
 i3status
 dunst
@@ -11,3 +12,5 @@ ranger
 network-manager-applet
 xautolock
 polkit-kde-agent
+# for reading battery status
+acpi

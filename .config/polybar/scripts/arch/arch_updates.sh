@@ -37,7 +37,7 @@ check_for_updates() {
   echo "⌛"
   UPDATE_LIST=$(checkupdates | nl -w2 -s '. ')
   # count lines
-  new_n_updates=$(echo "$UPDATE_LIST" | wc -l)
+  new_n_updates=$(echo -n "$UPDATE_LIST" | wc -l)
   [ "$new_n_updates" -gt "$N_UPDATES" ] && notify
   N_UPDATES="$new_n_updates"
   if [ ! $N_UPDATES -gt 0 ]; then

@@ -1,1 +1,2 @@
 i3lock-fancy-git
+ranger-git

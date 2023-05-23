@@ -19,6 +19,7 @@ augroup WrapLine
 	autocmd FileType txt setlocal wrap
 	autocmd FileType rst setlocal wrap
 augroup End
+autocmd FileType sh setlocal shiftwidth=2 softtabstop=2 expandtab
 " highlight current line
 set cursorline
 " enable line numbers

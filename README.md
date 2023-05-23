@@ -2,8 +2,12 @@
 ## Requirements
 
 ~~~ bash
-sudo pacman -S - < pkglist.txt
+grep -v "^#" pkglist.txt | sudo pacman -S --needed -
 ~~~
+
+``` bash
+grep -v "^#" pkglist_aur.txt | yay -S --needed -
+```
 
 ## IBus Configuration
 

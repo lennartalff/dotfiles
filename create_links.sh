@@ -3,30 +3,44 @@
 FILE_PATH=$(readlink -f "$0")
 REPO_DIR=$(dirname "$FILE_PATH")
 BACKUP_DIR="$REPO_DIR/backup"
-mkdir -p "$BACKUP_DIR"
-FILE_DST=("$HOME/.zshrc" "$HOME/.vimrc" "$HOME/.gitconfig")
 
-for f_out in "${FILE_DST[@]}"
+files=($(find $REPO_DIR/home/ -type f))
+for file in ${files[@]}
 do
-	FNAME="$(basename -- $f_out)"
-	F_SRC="$REPO_DIR/$FNAME"
-	if [ -f $f_out ] && [ ! -L "$f_out" ]; then
-		echo "Replacing '$f_out' with symlink."
-		i=0
-		F_BACKUP_BASE="$BACKUP_DIR/$FNAME"
-		F_BACKUP=$F_BACKUP_BASE
-		while [ -e "$F_BACKUP" ]; do
-			printf -v F_BACKUP '%s.backup%04d' "$F_BACKUP_BASE" "$(( i++ ))"
-		done
-		echo "Moving '$f_out' to '$F_BACKUP'"
-		mv "$f_out" "$F_BACKUP"
-		ln -sv "$F_SRC" "$f_out"
-	else
-		echo "$f_out does not exist as regular file."
-		if [ -e "$f_out" ]; then
-			echo "There is already a symlink for $f_out. Skipping..."
+	file_base=$(basename -- "$file")
+	dest=$HOME/$file_base
+	if [ -L "$dest" ]; then
+		if [ ! -e "$dest" ];then
+			echo "Remove broken link: $dest"
+			rm "$dest"
 		else
-			ln -sv "$F_SRC" "$f_out"
+			echo "Already installed: $dest"
+			continue
 		fi
+	elif [ -e "$dest" ]; then
+		echo "Skipping already existing file, please remove manually: $dest"
+		continue
 	fi
+	ln -sv $file $dest
+done
+
+files=($(find "$REPO_DIR/.config" -mindepth 1 -maxdepth 1 -type d))
+for file in ${files[@]}
+do
+	base=$(basename -- "$file")
+	dest="$HOME/.config/$base"
+	if [ -L "$dest" ];then
+		if [ ! -e "$dest" ];then
+			echo "Remove broken link: $dest"
+			rm "$dest"
+		else
+			echo "Already installed: $dest"
+			continue
+		fi
+	elif [ -e "$dest" ]; then
+		echo "Already exstis: $dest"
+		echo "Backing up..."
+		mv "$dest" "$BACKUP_DIR/"
+	fi
+	ln -sv $file $dest
 done

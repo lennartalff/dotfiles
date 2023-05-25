@@ -38,7 +38,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1 &
 
 # nitrogen handles the desktop background
-exec --no-startup-id "nitrogen --restore"
+exec_always --no-startup-id "nitrogen --restore"
 
 # dex could be used for autostarting applications. not used right now
 exec --no-startup-id dex --autostart --environment i3
@@ -47,6 +47,8 @@ exec --no-startup-id dex --autostart --environment i3
 exec_always --no-startup-id sxhkd -c $HOME/.config/sxhkd/sxhkdrc
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+exec_always --no-startup-id pkill -9 redshift; redshift -P -t 6500:4000&
 
 focus_follows_mouse no
 

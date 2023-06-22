@@ -50,7 +50,7 @@ check_for_updates() {
 
 notify() {
   notification=$(echo "$UPDATE_LIST" | column -t -L -o " " | sed 's/->//g')
-  notify-send -t 0 "Updates" "$notification"
+  notify-send -t 10 "Updates" "$notification"
 }
 
 

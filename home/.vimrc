@@ -30,8 +30,8 @@ set visualbell
 set encoding=utf-8
 set ttyfast
 
-set background=light
-colorscheme quietlight
+" set background=light
+" colorscheme quietlight
 
 " always show mode status line
 set laststatus=2

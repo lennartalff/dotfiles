@@ -5,7 +5,6 @@ prompt pure
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 #export PATH=$HOME/.platformio/penv/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="/home/lennartalff/.oh-my-zsh"
 
@@ -86,9 +85,12 @@ else
   export EDITOR='vim'
 fi
 
+export TERM="xterm-256color"
+
 
 alias reboot-windows="systemctl reboot --boot-loader-entry=windows.conf"
 alias reboot-linux="systemctl reboot --boot-loader-entry=arch.conf"
 alias zshrc="vim ~/.zshrc"
 
-# kinit -kt "$HOME/keytabs/cta1233.keytab" cta1233@KERBEROS.TU-HARBURG.DE
+alias mount-institut='kinit -kt "$HOME/keytabs/cta1233.keytab" cta1233@KERBEROS.TU-HARBURG.DE && mount /TUHH/Institut'
+alias mount-lehre='kinit -kt "$HOME/keytabs/cta1233.keytab" cta1233@KERBEROS.TU-HARBURG.DE && mount /TUHH/Lehre'

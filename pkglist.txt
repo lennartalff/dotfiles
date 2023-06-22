@@ -15,3 +15,4 @@ acpi
 arandr
 autorandr
 redshift
+ripgrep

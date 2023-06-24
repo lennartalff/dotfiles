@@ -1,2 +1,4 @@
-require("lennartalff.remap")
-print("hello from my package")
+require('lennartalff.remap')
+require('lennartalff.packer')
+require('lennartalff.set')
+vim.cmd('colorscheme rose-pine')

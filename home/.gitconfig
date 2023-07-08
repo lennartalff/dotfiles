@@ -13,6 +13,7 @@
 	defaultBranch = main
 [core]
 	editor = vim
+	autocrlf = input
 [pull]
 	ff = only
 [filter "lfs"]

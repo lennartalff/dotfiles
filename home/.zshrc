@@ -1,6 +1,10 @@
 fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
-zstyle :prompt:pure:prompt:success color green
+zstyle ':prompt:pure:path' color 075
+zstyle ':prompt:pure:prompt:success' color 214
+zstyle ':prompt:pure:user' color 119
+zstyle ':prompt:pure:host' color 119
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=161'
 prompt pure
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH

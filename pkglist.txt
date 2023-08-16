@@ -16,3 +16,4 @@ arandr
 autorandr
 redshift
 ripgrep
+xsel # provider for clipboard in nvim

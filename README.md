@@ -6,7 +6,7 @@ grep -v "^#" pkglist.txt | sudo pacman -S --needed -
 ~~~
 
 ``` bash
-grep -v "^#" pkglist_aur.txt | yay -S --needed -
+grep -v "^#" pkglist_aur.txt | yay -S --needed --noconfirm -
 ```
 
 ## IBus Configuration

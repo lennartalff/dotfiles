@@ -2,7 +2,7 @@
 	email = lennart.alff@gmail.com
 	name = Thies Lennart Alff
 [merge]
-	tool = vscode
+	tool = kdiff3
 [difftool "vscode"]
 	cmd = code --wait --diff $LOCAL $REMOTE
 [mergetool "vscode"]

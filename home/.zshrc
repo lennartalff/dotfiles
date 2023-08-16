@@ -98,3 +98,5 @@ alias zshrc="vim ~/.zshrc"
 
 alias mount-institut='kinit -kt "$HOME/keytabs/cta1233.keytab" cta1233@KERBEROS.TU-HARBURG.DE && mount /TUHH/Institut'
 alias mount-lehre='kinit -kt "$HOME/keytabs/cta1233.keytab" cta1233@KERBEROS.TU-HARBURG.DE && mount /TUHH/Lehre'
+
+alias git-delete-merged="git branch --merged main | grep -v '^[ *]*main$' | xargs git branch -d"

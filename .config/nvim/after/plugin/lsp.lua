@@ -1,18 +1,18 @@
 require('mason').setup({
-	ui = {
-		border = 'rounded'
-	}
+    ui = {
+        border = 'rounded'
+    }
 })
 -- Install language servers
 require('mason-lspconfig').setup {
-	ensure_installed = {
-		'lua_ls', 'clangd', 'pylsp', 'yamlls'
-	}
+    ensure_installed = {
+        'lua_ls', 'clangd', 'pylsp', 'yamlls'
+    }
 }
 local lsp = require('lsp-zero').preset({})
 
 lsp.on_attach(function(client, bufnr)
-  lsp.default_keymaps({buffer = bufnr})
+    lsp.default_keymaps({ buffer = bufnr })
 end)
 
 -- (Optional) Configure lua language server for neovim
@@ -21,7 +21,7 @@ require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 lsp.setup()
 
 local cmp = require('cmp')
-local cmp_action= require('lsp-zero').cmp_action()
+local cmp_action = require('lsp-zero').cmp_action()
 
 -- configure auto complete key
 cmp.setup({
@@ -38,3 +38,14 @@ cmp.setup({
         documentation = cmp.config.window.bordered(),
     },
 })
+
+require('lspconfig').pylsp.setup {
+    settings = {
+        pylsp = {
+            plugins = {
+                autopep8 = { enabled = false },
+                yapf = { enabled = true, args = '--style={based_on_style: google column_limit: 80}' },
+            }
+        }
+    }
+}

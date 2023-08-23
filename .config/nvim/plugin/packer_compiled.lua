@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/home/lennartalff/.local/share/nvim/site/pack/packer/start/formatter.nvim",
     url = "https://github.com/mhartington/formatter.nvim"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/lennartalff/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/lennartalff/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",

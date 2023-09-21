@@ -89,14 +89,13 @@ else
   export EDITOR='vim'
 fi
 
-export TERM="xterm-256color"
-
-
 alias reboot-windows="systemctl reboot --boot-loader-entry=windows.conf"
 alias reboot-linux="systemctl reboot --boot-loader-entry=arch.conf"
 alias zshrc="vim ~/.zshrc"
 
 alias mount-institut='kinit -kt "$HOME/keytabs/cta1233.keytab" cta1233@KERBEROS.TU-HARBURG.DE && mount /TUHH/Institut'
 alias mount-lehre='kinit -kt "$HOME/keytabs/cta1233.keytab" cta1233@KERBEROS.TU-HARBURG.DE && mount /TUHH/Lehre'
+
+alias rosterm='docker exec -it ros2-vim zsh'
 
 alias git-delete-merged="git branch --merged main | grep -v '^[ *]*main$' | xargs git branch -d"

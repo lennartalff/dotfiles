@@ -7,7 +7,8 @@ return {
             { 'nvim-lua/plenary.nvim' } }
     },
     { 'rose-pine/neovim',                name = 'rose-pine' },
-    --    'tpope/fugitive',
+    { 'catppuccin/nvim',                 name = 'catppuccin', priority = 1000 },
+    { 'tpope/vim-fugitive',              name = 'fugitive' },
     {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
@@ -23,5 +24,13 @@ return {
             { 'L3MON4D3/LuaSnip' },     -- Required
         },
     },
+    {
+        'ThePrimeagen/harpoon',
+        dependencies = {
+            { 'nvim-lua/plenary.nvim' },
+        },
+    },
+    { 'ray-x/lsp_signature.nvim', event = 'VeryLazy', opts = {},
+        config = function(_, opts) require('lsp_signature').setup(opts) end },
 
 }

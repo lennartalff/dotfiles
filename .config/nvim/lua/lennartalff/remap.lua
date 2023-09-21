@@ -28,7 +28,20 @@ vim.keymap.set('n', '<leader>f', function()
 end)
 
 -- quickfix navigation
-vim.keymap.set('n', '<C-k>', '<cmd>cnext<CR>zz')
-vim.keymap.set('n', '<C-j>', '<cmd>cprev<CR>zz')
-vim.keymap.set('n', '<leader>k', '<cmd>lnext<CR>zz')
-vim.keymap.set('n', '<leader>j', '<cmd>lprev<CR>zz')
+vim.keymap.set('n', '<C-j>', '<cmd>cnext<CR>zz')
+vim.keymap.set('n', '<C-k>', '<cmd>cprev<CR>zz')
+vim.keymap.set('n', '<leader>j', '<cmd>lnext<CR>zz')
+vim.keymap.set('n', '<leader>k', '<cmd>lprev<CR>zz')
+
+vim.keymap.set('n', '<leader>i', vim.lsp.buf.hover)
+vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename)
+
+vim.keymap.set('n', '<leader>dq', vim.diagnostic.setqflist)
+local function quickfix()
+    vim.lsp.buf.code_action({
+        filter = function(a) return a.isPreferred end,
+        apply = true
+    })
+end
+vim.keymap.set('n', '<leader>qf', quickfix)
+

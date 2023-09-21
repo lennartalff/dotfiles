@@ -15,7 +15,9 @@ for_window [class="Klipper"] floating enable; border none
 for_window [class="Plasmoidviewer"] floating enable; border none
 # for_window [class="(?i)*nextcloud*"] floating disable
 for_window [class="plasmashell" window_type="notification"] border none, move position 70 ppt 81 ppt no_focus [class="plasmashell" window_type="notification"]
-
+for_window [class="(.*join\?action\=join.*|.*zoom.*)"] floating enable
+for_window [class="(.*join\?action\=join.*|.*zoom.*)" title="Zoom - Licensed Account"] floating disable
+for_window [class="(.*join\?action\=join.*|.*zoom.*)" title="Zoom Meeting"] floating disable
 # no title bars
 default_border pixel 4
 default_floating_border pixel 4

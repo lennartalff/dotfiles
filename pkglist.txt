@@ -16,5 +16,7 @@ arandr
 autorandr
 redshift
 ripgrep
-xsel # provider for clipboard in nvim
-xss-lock # for locking the screen with loginctl
+# provider for clipboard in nvim
+xsel
+# for locking the screen with loginctl
+xss-lock
